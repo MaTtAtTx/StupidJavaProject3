@@ -33,10 +33,9 @@ public class ThirdStupid
 		this.age = age;
 	}
 
-	public string toSting()
+	public String toString()
 	{
-		String description = "This is testing name as " + name + "and age as " + age + ".";
-
-		return description;
+		String description = "This is made to test name as " + name + " and age as " + age + ".";
+		return description;		
 	}
 }
