@@ -64,7 +64,7 @@ public class StupidController
 		{
 			popup.displayText(sAge + " is my favorite number so it is a good age.");
 		}
-		if (sAge == 17)
+		if (sAge == 13)
 		{
 			popup.displayText(sAge + " is almost my favorite number.");
 		}
