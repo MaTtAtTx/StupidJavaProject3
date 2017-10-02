@@ -30,6 +30,16 @@ public class StupidController
 		}	
 		sAge = Integer.parseInt(ageTest);
 		
+		while (sAge >= 75 && sAge < 122)
+		{
+			ageTest = popup.getResponse("That age is far too old for my liking. Please type a new age.");
+			while (!isValidInteger(ageTest))
+			{
+				ageTest = popup.getResponse("Please type an integer. What would you like the age to be?");
+			}
+			sAge = Integer.parseInt(ageTest);
+		}
+		
 		if (sAge > 0 && sAge != 17 && sAge != 13)
 		{
 			if (sAge == 122)
