@@ -2,25 +2,46 @@ package stupid.controller;
 
 import stupid.model.ThirdStupid;
 import stupid.vew.StupidDisplay;
+import java.util.List;
+import java.util.ArrayList;
 
 public class StupidController
 {
 	private StupidDisplay popup;
+	private List<ThirdStupid> testList;
 	
 	public StupidController()
 	{
 		popup = new StupidDisplay();
+		testList = new ArrayList<ThirdStupid>();
 	}
 	
 	public void start()
 	{
 		ThirdStupid tester = new ThirdStupid("Tom", 0);
+		ThirdStupid forEachTest1 = new ThirdStupid("Test1", 0);
+		ThirdStupid forEachTest2 = new ThirdStupid("Test2", 0);
 		popup.displayText(tester.toString());
+		
+		testList.add(forEachTest1);
+		testList.add(forEachTest2);
+		forEachList();
 		
 		ifStuffTest(tester);
 	}
 	
-	private void ifStuffTest(ThirdStupid currentTest)
+	private void forEachList()
+	{		
+		for(ThirdStupid current : testList)
+		{
+			popup.displayText(current.getName());
+			String newName = popup.getResponse("What should my new new name be?");
+			current.setName(newName);
+			popup.displayText(current.getName());		
+		}
+	}
+	
+	private void ifStuffTest(ThirdStupid currentTest) 
 	{
 		int sAge = 0;
 		String ageTest = popup.getResponse("What age would you like for the test?");
