@@ -9,6 +9,8 @@ public class StupidController
 {
 	private StupidDisplay popup;
 	private List<ThirdStupid> testList;
+	private int number;
+	private int number2;
 	
 	public StupidController()
 	{
@@ -23,11 +25,25 @@ public class StupidController
 		ThirdStupid forEachTest2 = new ThirdStupid("Test2", 0);
 		popup.displayText(tester.toString());
 		
+		testingFor();
 		testList.add(forEachTest1);
 		testList.add(forEachTest2);
 		forEachList();
 		
 		ifStuffTest(tester);
+	}
+	
+	private void testingFor()
+	{
+		for(number = 0; number <= 10; number++)
+		{
+			popup.displayText("Your number is " + number);
+		}
+		
+		for(number2 = 100; number2 >= 0; number2-=5)
+		{
+			popup.displayText("Your number is " + number2);
+		}
 	}
 	
 	private void forEachList()
