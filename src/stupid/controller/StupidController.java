@@ -26,6 +26,7 @@ public class StupidController
 		testList.add(forEachTest1);
 		testList.add(forEachTest2);
 		forEachList();
+		ageList();
 		
 		ifStuffTest(tester);
 	}
@@ -34,10 +35,28 @@ public class StupidController
 	{		
 		for(ThirdStupid current : testList)
 		{
-			popup.displayText(current.getName());
-			String newName = popup.getResponse("What should my new new name be?");
+			popup.displayText("One member of the list is named " + current.getName());
+			String newName = popup.getResponse("What should their new name be?");
 			current.setName(newName);
-			popup.displayText(current.getName());		
+			popup.displayText("That member of the list is now named " + current.getName());		
+		}
+	}
+	
+	private void ageList()
+	{
+		for(ThirdStupid current : testList)
+		{
+			
+			popup.displayText(current.getName() + " has an age of " + current.getAge());
+			String newAge = popup.getResponse("What should a new age be for " + current.getName() + "?");
+			while (!isValidInteger(newAge))
+			{
+				newAge = popup.getResponse("Age must be an integer. Please type an integer.");
+			}
+			int testAge2 = 0;
+			testAge2 = Integer.parseInt(newAge);
+			current.setAge(testAge2);
+			popup.displayText(current.getName() + " now has an age of " + current.getAge());		
 		}
 	}
 	
