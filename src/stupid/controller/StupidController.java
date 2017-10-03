@@ -26,7 +26,6 @@ public class StupidController
 		testList.add(forEachTest1);
 		testList.add(forEachTest2);
 		forEachList();
-		ageList();
 		
 		ifStuffTest(tester);
 	}
@@ -40,10 +39,7 @@ public class StupidController
 			current.setName(newName);
 			popup.displayText("That member of the list is now named " + current.getName());		
 		}
-	}
-	
-	private void ageList()
-	{
+		
 		for(ThirdStupid current : testList)
 		{
 			
@@ -59,7 +55,7 @@ public class StupidController
 			popup.displayText(current.getName() + " now has an age of " + current.getAge());		
 		}
 	}
-	
+
 	private void ifStuffTest(ThirdStupid currentTest) 
 	{
 		int sAge = 0;
